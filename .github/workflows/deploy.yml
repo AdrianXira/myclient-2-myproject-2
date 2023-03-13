@@ -1,0 +1,21 @@
+name: CI/CD
+
+#Trigger deployment only on push to main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install:
+    name: ls -l
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ls -l
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: ls -lh
+          host: ${{secrets.HOST_DNS}}
+          username: ${{secrets.USER_NAME}}
+          privateKey: ${{secrets.SSH_KEY}}
