@@ -19,3 +19,4 @@ jobs:
           host: ${{secrets.HOST_DNS}}
           username: ${{secrets.USER}}
           password: ${{secrets.PASS}}
+          port: 22
