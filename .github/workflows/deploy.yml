@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - name: ls -l
-        uses: garygrossgarten/github-action-ssh@release
+        uses: appleboy/ssh-action@v0.1.8
         with:
-          command: ls -lh
+          script: ls -lh
           host: ${{secrets.HOST_DNS}}
           username: ${{secrets.USER_NAME}}
-          privateKey: ${{secrets.SSH_KEY}}
+          key: ${{secrets.SSH_KEY}}
