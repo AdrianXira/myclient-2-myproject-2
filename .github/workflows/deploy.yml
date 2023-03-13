@@ -15,8 +15,7 @@ jobs:
       - name: ls -l
         uses: appleboy/ssh-action@v0.1.8
         with:
-          script: ls -lh
-          host: ${{secrets.HOST_DNS}}
-          username: ${{secrets.USER}}
-          password: ${{secrets.PASS}}
-          port: 22
+          host: ec2-18-220-190-32.us-east-2.compute.amazonaws.com
+          username: deployment
+          password: 4!1*VjBzGk8w
+          script: whoami
